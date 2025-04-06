@@ -17,3 +17,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+test {
+    useJUnitPlatform {
+        if (project.hasProperty("includeTags")) {
+            includeTags(project.property("includeTags") as String)
+        }
+    }
+}
